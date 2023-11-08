@@ -1,0 +1,91 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              11/08/2023 14:41:01 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: E:\keil51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main.
+                    -lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "constant.h"
+   3          #include "fuction.h"
+   4          #include "LCD1602.h"
+   5          void main(){
+   6   1        
+   7   1        Timer0_Init();
+   8   1        LCD_Init();
+   9   1      while(1){
+  10   2        
+  11   2        /**
+  12   2        * @brief  在LCD1602指定位置开始显示所给字符串
+  13   2        * @param  Line 起始行位置，范围：1~2
+  14   2        * @param  Column 起始列位置，范围：1~16
+  15   2        * @param  String 要显示的字符串
+  16   2        * @retval 无
+  17   2        */
+  18   2        if(flag_show==0){
+  19   3          LCD_ShowString(1,1,"timeset:");
+  20   3          LCD_ShowNum(1,9,time,3);
+  21   3        }
+  22   2      
+  23   2        /**
+  24   2        * @brief  在LCD1602指定位置开始显示所给数字
+  25   2        * @param  Line 起始行位置，范围：1~2
+  26   2        * @param  Column 起始列位置，范围：1~16
+  27   2        * @param  Number 要显示的数字，范围：0~65535
+  28   2        * @param  Length 要显示数字的长度，范围：1~5
+  29   2        * @retval 无
+  30   2        */
+  31   2        
+  32   2        if(P3_0==0){
+  33   3          Delay20ms();
+  34   3          while(P3_0==0);
+  35   3          Delay20ms();
+  36   3          time++;
+  37   3        }
+  38   2        if(P3_1==0){
+  39   3          Delay20ms();
+  40   3          while(P3_1==0);
+  41   3          Delay20ms();
+  42   3          time=0;
+  43   3        }
+  44   2          if(P3_2==0){
+  45   3            if(time==0){
+  46   4              LCD_Init();
+  47   4              LCD_ShowString(1,1,"The number cannot be zero");
+  48   4            }
+  49   3          Delay20ms();
+  50   3          while(P3_2==0);
+  51   3          Delay20ms();
+  52   3          flag_show=1;
+  53   3          LCD_Init();
+  54   3          Timer0_begin();
+C51 COMPILER V9.59.0.0   MAIN                                                              11/08/2023 14:41:01 PAGE 2   
+
+  55   3        }
+  56   2          if(P3_3==0){
+  57   3          Delay20ms();
+  58   3          while(P3_2==0);
+  59   3          Delay20ms();
+  60   3          flag_show=0;
+  61   3          time=0;
+  62   3          LCD_Init();
+  63   3        }
+  64   2      }
+  65   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    347    ----
+   CONSTANT SIZE    =     45    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

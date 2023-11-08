@@ -1,0 +1,26 @@
+C51 COMPILER V9.59.0.0   CONSTANT                                                          11/07/2023 15:05:38 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE CONSTANT
+OBJECT MODULE PLACED IN .\Objects\constant.obj
+COMPILER INVOKED BY: E:\keil51\C51\BIN\C51.EXE constant.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\c
+                    -onstant.lst) TABS(2) OBJECT(.\Objects\constant.obj)
+
+line level    source
+
+   1          extern int T0count=0;
+   2          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
